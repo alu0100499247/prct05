@@ -50,12 +50,14 @@ class Fraccion
 	end
 
 	def producto(x, y)  # Devuelve un racional con el producto de (@num/@den) * (x/y)
-		racional = Fraccion.new(@num*x, @den*y)
+		a, b = reducir(@num*x, @den*y)
+		racional = Fraccion.new(a, b)
 		return racional
 	end
 
 	def division(x, y)  # Devuelve un racional con la division de (@num/@den) / (x/y)
-		racional = Fraccion.new(@num*y, @den*x)
+		a, b = reducir(@num*y, @den*x)
+		racional = Fraccion.new(a, b)
 		return racional
 	end
 
